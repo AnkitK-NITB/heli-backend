@@ -4,12 +4,11 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const userRoutes = require('./routes/users');
 const teamRoutes = require('./routes/team');
+const cors = require('cors');
 require('dotenv').config(); // Load environment variables from .env
 
-const cors = require('cors');
-app.use(cors());
-
 const app = express();
+app.use(cors());
 const PORT = process.env.PORT || 3001;
 
 mongoose.connect(process.env.MONGODB_URI, {
