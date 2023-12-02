@@ -6,6 +6,9 @@ const userRoutes = require('./routes/users');
 const teamRoutes = require('./routes/team');
 require('dotenv').config(); // Load environment variables from .env
 
+const cors = require('cors');
+app.use(cors());
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 
